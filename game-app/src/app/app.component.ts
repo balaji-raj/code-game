@@ -3,6 +3,9 @@ import {
   OnDestroy,
   ViewChild, ElementRef
 } from '@angular/core';
+import { BoardService } from './app.boardservice.service';
+import * as io from 'socket.io-client';
+import { Observable, of } from 'rxjs';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -10,9 +13,15 @@ import {
 })
 export class AppComponent implements OnInit {
   @ViewChild('grid') canvasRef: ElementRef;
-
+  private url = 'http://localhost:3000';
+  show_board = false;
+  constructor(private BoardService: BoardService) {
+   
+  }
   ngOnInit() {
-
+   
+  }
+  create_board() {
     let ctx: CanvasRenderingContext2D =
       this.canvasRef.nativeElement.getContext('2d');
     let img1 = new Image(); // Image constructor
@@ -117,4 +126,14 @@ export class AppComponent implements OnInit {
   }
   title = 'game-app';
 
+  enteringGame() {
+   
+    
+    this.show_board = true;
+   
+    this.BoardService.ngOnInit();
+   // this.BoardService.getMessages();
+    this.create_board();
+  
+  }
 }
