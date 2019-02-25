@@ -3,8 +3,11 @@
   <img  src="https://www.html5canvastutorials.com/demos/assets/yoda.jpg" width="20" height="27"  alt="The Scream" id="scream">
   <img #scream1 width="20" height="27" src="https://www.html5canvastutorials.com/demos/assets/yoda.jpg" alt="The Scream">
 </div>
-<canvas #grid width="500" height="500">
+<button class="btn-btn-primary" (click)="enteringGame()">Enter to the game</button>
+<div *ngIf="show_board"></div>
+<canvas  #grid width="500" height="500">
 </canvas>
+
 <div>
   <select #player>
       <option value="player1">player1</option>
