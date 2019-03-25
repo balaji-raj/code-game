@@ -5,11 +5,13 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import {BoardService} from './app.boardservice.service';
 import {DbconnectionService} from './dbconnection.service'
-import { ChartmakerComponent } from './chartmaker/chartmaker.component'
+import { ChartmakerComponent } from './chartmaker/chartmaker.component';
+import { PlayersComponent } from './players/players.component'
 @NgModule({
   declarations: [
     AppComponent,
-    ChartmakerComponent
+    ChartmakerComponent,
+    PlayersComponent
   ],
   imports: [
     BrowserModule,

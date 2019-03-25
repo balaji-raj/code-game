@@ -23,6 +23,7 @@
               "src/assets"
             ],
             "styles": [
+              "../node_modules/",
               "src/styles.css"
             ],
             "scripts": []
